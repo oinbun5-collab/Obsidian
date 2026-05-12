@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .admin-banner {
+      background: #fff8e1;
+      border: 1px solid #ffd54f;
+      padding: 12px 16px;
+      margin-bottom: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .admin-banner strong { color: #c77700; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    @media (min-width: 600px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      border: 1px solid #eaeaea;
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card ul { margin: 0; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+
+    .status {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .status.draft { background: #fff3e0; color: #e65100; }
+    .status.published { background: #e8f5e9; color: #2e7d32; }
+    .status.todo { background: #f3e5f5; color: #6a1b9a; }
+
+    .quick-links a {
+      display: block;
+      padding: 8px 0;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .quick-links a:hover { color: #0066cc; }
+    .quick-links a:last-child { border-bottom: none; }
+    .quick-links .domain { font-family: monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p>관리자 전용. 공개 사이트와 분리됨.</p>
+    <nav>
+      <a href="../index.html">← 공개 사이트 (홈)</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="admin-banner">
+      <strong>⚠️ 비밀 정보 금지</strong> — 이 페이지는 URL 노출 시 누구나 접근 가능합니다.
+      비밀번호·API 키·개인정보는 절대 여기 쓰지 마세요.
+      진짜 보호는 W13에서 Cloudflare Access 추가 예정.
+    </div>
+
+    <section>
+      <h2>글 관리</h2>
+      <table style="width:100%; border-collapse: collapse; margin-top: 16px;">
+        <thead>
+          <tr style="border-bottom: 2px solid #eaeaea; text-align: left;">
+            <th style="padding: 8px 0;">제목</th>
+            <th style="padding: 8px 0;">상태</th>
+            <th style="padding: 8px 0;">파일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px 0;">첫번째 글 제목</td>
+            <td><span class="status draft">초안</span></td>
+            <td style="font-family: monospace; font-size: 13px;">01-첫번째글</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px 0;">두번째 글 제목</td>
+            <td><span class="status draft">초안</span></td>
+            <td style="font-family: monospace; font-size: 13px;">02-두번째글</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px 0;">세번째 글 제목</td>
+            <td><span class="status draft">초안</span></td>
+            <td style="font-family: monospace; font-size: 13px;">03-세번째글</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h3>발행 체크리스트</h3>
+        <ul>
+          <li>Obsidian/Wiki/*.md 작성 완료</li>
+          <li>docs/posts/*.html 동기화</li>
+          <li>docs/index.html 카드 제목 업데이트</li>
+          <li>PC 브라우저 확인</li>
+          <li>모바일 브라우저 확인</li>
+          <li>git commit + push</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>TODO</h3>
+        <ul>
+          <li><span class="status todo">W11</span> Wiki → posts 자동 변환 스크립트</li>
+          <li><span class="status todo">W12</span> 디자인 v3</li>
+          <li><span class="status todo">W13</span> 도메인 등록 + Cloudflare Access</li>
+          <li><span class="status todo">W14</span> 통계/카운트다운</li>
+        </ul>
+      </div>
+
+      <div class="card quick-links">
+        <h3>빠른 링크</h3>
+        <a href="https://oinbun5-collab.github.io/Obsidian/" target="_blank">
+          <span class="domain">🌐 라이브 사이트</span>
+        </a>
+        <a href="https://github.com/oinbun5-collab/Obsidian" target="_blank">
+          <span class="domain">📦 GitHub repo</span>
+        </a>
+        <a href="https://github.com/oinbun5-collab/Obsidian/settings/pages" target="_blank">
+          <span class="domain">⚙️ Pages 설정</span>
+        </a>
+        <a href="https://github.com/oinbun5-collab/Obsidian/actions" target="_blank">
+          <span class="domain">📊 빌드 로그</span>
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>기획 4질문</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><strong>누구를 위해:</strong> _________</li>
+          <li><strong>왜 만들어:</strong> _________</li>
+          <li><strong>첫 콘텐츠 3개:</strong> 위 글 관리 참조</li>
+          <li><strong>성공 기준:</strong> _________</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Admin · © 2026 · <a href="../index.html">공개 사이트로</a>
+  </footer>
+</body>
+</html>
