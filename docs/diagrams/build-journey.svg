@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1480" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .paper { fill: #f6f3ec; }
+      .ink { fill: #161410; }
+      .rule { stroke: #1a1a1a; }
+      .muted { fill: #5a5750; }
+      .body-text { font-family: "Cormorant Garamond", Georgia, serif; font-size: 14px; fill: #1d1a13; }
+      .label { font-family: "Libre Caslon Text", Georgia, serif; font-style: italic; font-size: 11px; fill: #5a5750; letter-spacing: 0.2em; text-transform: uppercase; }
+      .hd-section { font-family: "Cormorant SC", "Cormorant Garamond", serif; font-weight: 700; font-size: 24px; fill: #161410; letter-spacing: -0.005em; }
+      .hd-xl { font-family: "Cormorant SC", "Cormorant Garamond", serif; font-weight: 700; font-size: 40px; fill: #161410; letter-spacing: -0.01em; }
+      .script { font-family: "Pinyon Script", cursive; font-size: 36px; fill: #161410; }
+      .meta-italic { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 13px; fill: #5a5750; letter-spacing: 0.04em; }
+      .warn-text { fill: #8c2a1c; }
+    </style>
+  </defs>
+
+  <!-- background paper -->
+  <rect width="800" height="1480" class="paper"/>
+
+  <!-- top rule -->
+  <line x1="80" y1="40" x2="720" y2="40" class="rule" stroke-width="0.6"/>
+
+  <!-- masthead -->
+  <text x="400" y="90" text-anchor="middle" class="hd-xl">ISSUE 001 — THE BUILD</text>
+  <text x="400" y="118" text-anchor="middle" class="meta-italic">From an empty folder to a live URL · 2026-05-12</text>
+
+  <!-- bottom of masthead rule -->
+  <line x1="80" y1="142" x2="720" y2="142" class="rule" stroke-width="0.6"/>
+
+  <!-- vertical timeline line -->
+  <line x1="120" y1="200" x2="120" y2="1320" class="rule" stroke-width="0.8"/>
+
+  <!-- ─── STEP 01 ──────────────────────────────── -->
+  <circle cx="120" cy="210" r="5" class="ink"/>
+  <text x="165" y="208" class="label">No. 01 · Start</text>
+  <text x="165" y="240" class="hd-section">EMPTY FOLDER</text>
+  <text x="165" y="266" class="body-text">AITOOL_SMIT/ — 빈 디렉토리. 슬라이드 PDF 1개만.</text>
+  <text x="165" y="285" class="body-text">W06 Wiki / W09 디자인 자산 없음 → Plan B 진입.</text>
+
+  <!-- ─── STEP 02 ──────────────────────────────── -->
+  <circle cx="120" cy="340" r="5" class="ink"/>
+  <text x="165" y="338" class="label">No. 02 · 작성 환경</text>
+  <text x="165" y="370" class="hd-section">OBSIDIAN 골격</text>
+  <text x="165" y="396" class="body-text">Raw/ · Wiki/01–03.md · Index.md</text>
+  <text x="165" y="415" class="body-text">Vault로 열어서 콘텐츠 작성하는 자리.</text>
+
+  <!-- ─── STEP 03 ──────────────────────────────── -->
+  <circle cx="120" cy="470" r="5" class="ink"/>
+  <text x="165" y="468" class="label">No. 03 · 발행 환경</text>
+  <text x="165" y="500" class="hd-section">정적 사이트 골격</text>
+  <text x="165" y="526" class="body-text">site/ — index.html · about.html · posts/01–03 · style.css</text>
+  <text x="165" y="545" class="body-text">모든 경로 상대 (GitHub Pages 흔한 막힘 사전 회피).</text>
+
+  <!-- ─── STEP 04 ──────────────────────────────── -->
+  <circle cx="120" cy="600" r="5" class="ink"/>
+  <text x="165" y="598" class="label">No. 04 · 원격</text>
+  <text x="165" y="630" class="hd-section">GITHUB REPO</text>
+  <text x="165" y="656" class="body-text">oinbun5-collab/Obsidian 받음. site/ → docs/ rename</text>
+  <text x="165" y="675" class="body-text">(GH Pages는 root나 /docs만 source로 인식).</text>
+
+  <!-- ─── STEP 05 — 막힌 지점 ─────────────────── -->
+  <circle cx="120" cy="730" r="7" fill="#8c2a1c"/>
+  <text x="165" y="728" class="label warn-text">No. 05 · ⚠ 403</text>
+  <text x="165" y="760" class="hd-section warn-text">PERMISSION DENIED</text>
+  <text x="165" y="786" class="body-text">활성 gh 계정 = negalab. repo 소유자 = oinbun5-collab.</text>
+  <text x="165" y="805" class="body-text">다중 계정 환경의 흔한 함정. push 실패.</text>
+
+  <!-- ─── STEP 06 ──────────────────────────────── -->
+  <circle cx="120" cy="860" r="5" class="ink"/>
+  <text x="165" y="858" class="label">No. 06 · 인증 추가</text>
+  <text x="165" y="890" class="hd-section">gh auth login — switch</text>
+  <text x="165" y="916" class="body-text">브라우저 인증 + 8자리 코드 → oinbun5-collab 계정 등록.</text>
+  <text x="165" y="935" class="body-text">gh auth switch -u oinbun5-collab.</text>
+
+  <!-- ─── STEP 07 — 정점 ─────────────────────── -->
+  <circle cx="120" cy="990" r="7" class="ink"/>
+  <text x="165" y="988" class="label">No. 07 · 라이브</text>
+  <text x="165" y="1020" class="hd-section">PUSH ✓  PAGES ON</text>
+  <text x="165" y="1046" class="body-text">git push 성공. gh api로 Pages 자동 활성화 (웹 클릭 0).</text>
+  <text x="165" y="1066" class="body-text">oinbun5-collab.github.io/Obsidian/ — status: building.</text>
+
+  <!-- ─── STEP 08 ──────────────────────────────── -->
+  <circle cx="120" cy="1120" r="5" class="ink"/>
+  <text x="165" y="1118" class="label">No. 08 · 관리자 영역</text>
+  <text x="165" y="1150" class="hd-section">ADMIN DASHBOARD</text>
+  <text x="165" y="1176" class="body-text">docs/admin/ — 글 상태 · 체크리스트 · TODO · 빠른 링크.</text>
+  <text x="165" y="1195" class="body-text">robots.txt + noindex. W13에 Cloudflare Access 추가 예정.</text>
+
+  <!-- ─── STEP 09 ──────────────────────────────── -->
+  <circle cx="120" cy="1250" r="5" class="ink"/>
+  <text x="165" y="1248" class="label">No. 09 · 디자인 적용</text>
+  <text x="165" y="1280" class="hd-section">HELMUT NEWTON</text>
+  <text x="165" y="1306" class="body-text">매거진 editorial 톤 적용. Cormorant + Pinyon Script.</text>
+  <text x="165" y="1325" class="body-text">My Blog → DYKWON. 공개 4페이지 통째 재디자인.</text>
+
+  <!-- footer rule -->
+  <line x1="80" y1="1380" x2="720" y2="1380" class="rule" stroke-width="0.6"/>
+
+  <!-- footer -->
+  <text x="80" y="1410" class="label">© 2026 — DYKWON</text>
+  <text x="720" y="1410" text-anchor="end" class="label">9 steps · 1 outage · 1 URL</text>
+
+  <!-- decorative script -->
+  <text x="400" y="1455" text-anchor="middle" class="script">— live —</text>
+</svg>
