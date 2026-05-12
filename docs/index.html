@@ -3,38 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Blog</title>
+  <title>DYKWON</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Blog</h1>
-    <p>여기에 한 줄 소개 — 누구를 위해, 무엇을 쓰는 곳인지.</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <div class="page-wrap">
+    <div class="page">
+      <nav class="topnav">
+        <span>DYKWON</span>
+        <em>a journal &mdash; thoughts &amp; ideas</em>
+        <span class="links">
+          <a href="index.html">Journal</a>
+          <a href="about.html">About</a>
+        </span>
+      </nav>
 
-  <main>
-    <a class="post-card" href="posts/01-첫번째글.html">
-      <h2>첫번째 글 제목</h2>
-      <time>2026-05-12</time>
-    </a>
+      <header class="masthead">
+        <h1 class="hd hd-xl">DYKWON</h1>
+      </header>
 
-    <a class="post-card" href="posts/02-두번째글.html">
-      <h2>두번째 글 제목</h2>
-      <time>2026-05-12</time>
-    </a>
+      <p class="lede">
+        <strong>DYKWON SERVICE</strong> &mdash; a journal of thoughts &amp; ideas.
+        <em>여기에 한 줄 소개 &mdash; 누구를 위해, 무엇을 쓰는 곳인지.</em>
+      </p>
 
-    <a class="post-card" href="posts/03-세번째글.html">
-      <h2>세번째 글 제목</h2>
-      <time>2026-05-12</time>
-    </a>
-  </main>
+      <div class="label">Journal</div>
 
-  <footer>
-    © 2026 My Blog
-  </footer>
+      <div class="post-list">
+        <a class="post-card" href="posts/01-첫번째글.html">
+          <div class="post-num">No. 01</div>
+          <div class="post-title">첫번째 글 제목</div>
+          <div class="post-meta">2026-05-12 &nbsp;·&nbsp; Editorial</div>
+        </a>
+
+        <a class="post-card" href="posts/02-두번째글.html">
+          <div class="post-num">No. 02</div>
+          <div class="post-title">두번째 글 제목</div>
+          <div class="post-meta">2026-05-12 &nbsp;·&nbsp; Editorial</div>
+        </a>
+
+        <a class="post-card" href="posts/03-세번째글.html">
+          <div class="post-num">No. 03</div>
+          <div class="post-title">세번째 글 제목</div>
+          <div class="post-meta">2026-05-12 &nbsp;·&nbsp; Editorial</div>
+        </a>
+      </div>
+
+      <footer class="foot">
+        <span>© 2026 &mdash; DYKWON</span>
+        <span>Issue 001 · Spring</span>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>

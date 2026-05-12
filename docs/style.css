@@ -1,90 +1,257 @@
+/* Helmut Newton — magazine editorial styles */
+/* 적용: docs/ 공개 사이트 (admin/ 제외) */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+SC:wght@500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&family=Italianno&display=swap');
+
+:root {
+  --paper: #f6f3ec;
+  --ink: #161410;
+  --rule: #1a1a1a;
+  --muted: #5a5750;
+  --bg: #d6d2c8;
+}
+
 * { box-sizing: border-box; }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 48px 24px;
-  color: #1a1a1a;
-  background: #ffffff;
-  line-height: 1.6;
-}
-
-header {
-  margin-bottom: 48px;
-  border-bottom: 1px solid #eaeaea;
-  padding-bottom: 24px;
-}
-
-header h1 {
-  font-size: 28px;
-  margin: 0 0 8px;
-}
-
-header p {
+html, body {
   margin: 0;
-  color: #666;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Cormorant Garamond", "Libre Caslon Text", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-nav {
-  margin-top: 16px;
+.page-wrap {
+  padding: 24px;
+  min-height: 100vh;
 }
 
-nav a {
-  margin-right: 16px;
-  color: #1a1a1a;
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 32px 40px 48px;
+  box-shadow: 0 4px 30px rgba(0,0,0,.10);
+  background-image: radial-gradient(rgba(0,0,0,.012) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* ─── Top nav ─── */
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: "Libre Caslon Text", "Cormorant Garamond", serif;
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 6px 0 10px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+.topnav em {
+  text-transform: none;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  font-size: 11px;
+  color: #444;
+}
+.topnav a {
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #1a1a1a;
+}
+.topnav a:hover { color: #000; }
+.topnav .links { display: flex; gap: 14px; }
+@media (max-width: 600px) {
+  .topnav { flex-direction: column; gap: 6px; align-items: center; text-align: center; }
 }
 
-nav a:hover {
-  color: #0066cc;
-  border-color: #0066cc;
+/* ─── Masthead ─── */
+.masthead {
+  margin: 0 0 32px;
+  text-align: center;
+}
+.hd {
+  font-family: "Cormorant SC", "Cormorant Garamond", serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+.hd-xl {
+  font-size: 108px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.script {
+  font-family: "Pinyon Script", "Italianno", cursive;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .hd-xl { font-size: 64px; }
 }
 
-.post-card {
+/* ─── Lede ─── */
+.lede {
+  max-width: 560px;
+  margin: 0 auto 48px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  color: #1a1810;
+}
+.lede strong { font-weight: 600; }
+.lede em { font-style: italic; }
+
+/* ─── Section labels ─── */
+.label {
+  font-family: "Libre Caslon Text", "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  margin: 56px 0 24px;
+}
+
+/* ─── Post list (home) ─── */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list .post-card {
   display: block;
-  padding: 20px 0;
-  border-bottom: 1px solid #eaeaea;
+  padding: 24px 0;
+  border-bottom: 1px solid #c9c4b8;
   text-decoration: none;
   color: inherit;
 }
-
-.post-card:hover h2 {
-  color: #0066cc;
+.post-list .post-card:last-child { border-bottom: none; }
+.post-list .post-card:hover .post-title {
+  font-style: italic;
+}
+.post-list .post-num {
+  font-family: "Libre Caslon Text", serif;
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.post-list .post-title {
+  font-family: "Cormorant SC", "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+  margin: 6px 0 8px;
+  transition: font-style .15s;
+}
+.post-list .post-meta {
+  font-family: "Libre Caslon Text", serif;
+  font-style: italic;
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+@media (max-width: 700px) {
+  .post-list .post-title { font-size: 26px; }
 }
 
-.post-card h2 {
-  font-size: 20px;
-  margin: 0 0 6px;
+/* ─── Article (post / about) ─── */
+article {
+  max-width: 720px;
+  margin: 0 auto;
 }
-
-.post-card time {
-  font-size: 13px;
-  color: #888;
+article .post-num {
+  display: block;
+  font-family: "Libre Caslon Text", serif;
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
 }
-
 article h1 {
-  font-size: 26px;
+  font-family: "Cormorant SC", "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 0.98;
+  letter-spacing: -0.005em;
+  text-align: center;
   margin: 0 0 8px;
 }
-
+@media (max-width: 700px) {
+  article h1 { font-size: 44px; }
+}
 article time {
   display: block;
-  color: #888;
-  font-size: 13px;
-  margin-bottom: 32px;
+  text-align: center;
+  font-family: "Libre Caslon Text", serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 48px;
 }
-
 article h2 {
-  font-size: 18px;
-  margin-top: 32px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.005em;
+  margin: 36px 0 12px;
 }
+article p, article li {
+  font-family: "Cormorant Garamond", "Libre Caslon Text", Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  color: #1d1a13;
+  text-align: justify;
+  hyphens: auto;
+  margin: 0 0 14px;
+}
+article ul { padding-left: 22px; }
+article em { font-style: italic; }
+article strong { font-weight: 600; }
 
-footer {
+/* ─── Footer ─── */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Libre Caslon Text", serif;
+  font-size: 9.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-top: 1px solid #ccc7bd;
+  padding: 14px 0 0;
   margin-top: 64px;
-  padding-top: 24px;
-  border-top: 1px solid #eaeaea;
-  color: #888;
-  font-size: 13px;
 }
+.foot a { color: inherit; text-decoration: none; }
+.foot a:hover { color: var(--ink); }
+
+/* ─── Back link ─── */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 56px;
+  font-family: "Libre Caslon Text", serif;
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--ink); }
